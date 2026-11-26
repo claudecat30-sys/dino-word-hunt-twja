@@ -230,7 +230,7 @@ iframe.lf{position:fixed;inset:0;width:100%;height:100%;border:0;display:none;ba
 /* ---- 互動目標 ---- */
 .gbox{position:absolute;z-index:6;right:1.5%;top:26%;width:min(25vw,42vh);height:min(25vw,42vh);pointer-events:none;background:rgba(255,255,255,.55);border:4px solid rgba(255,255,255,.95);border-radius:24px;box-shadow:0 8px 18px rgba(60,20,80,.22);padding:3%}
 .gbox>*{position:absolute}.gbox .gcont,.gbox .gin,.gbox .gpz,.gbox .gbd,.gbox .gctr,.gbox .gfr{margin:4%}
-.gbox.port{right:3%;top:40%;width:min(36vw,22vh);height:min(36vw,22vh)}/*mfix*/.mgrid{position:absolute;z-index:5;left:4%;top:15%;width:min(66%,860px);height:min(76%,560px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}.mgrid .card{position:relative;width:auto;height:auto;min-width:0;min-height:0}.card,.opt,.tile{color:#4a3b52}.has-mem .gbox{left:auto!important;right:1.5%!important;top:26%!important;opacity:1!important;transform:none!important}@media (orientation:portrait){.mgrid{left:5%;right:5%;width:auto;max-width:520px;margin:0 auto;top:11%;height:min(58%,620px);grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}.has-mem .gbox{top:auto!important;bottom:2%!important;right:3%!important;width:min(36vw,22vh);height:min(36vw,22vh);width:min(36vw,22dvh);height:min(36vw,22dvh)}}.qbar{width:max-content}.qbar>span{white-space:normal;min-width:0;text-align:center}.opt.chunk{width:min(46vw,300px,26vh)}@media (orientation:landscape){.opt.chunk{width:min(23vw,300px,44vh)}}@media (orientation:landscape) and (max-height:430px){.mgrid{top:calc(max(8px,env(safe-area-inset-top)) + 52px);height:auto;bottom:3%;gap:8px}.sayCard{top:calc(max(8px,env(safe-area-inset-top)) + 48px)!important;padding:4px 18px!important;border-width:3px!important;font-size:clamp(16px,8vh,30px)!important}.gbox{width:min(25vw,36vh);height:min(25vw,36vh)}.gbox.g-path{height:min(13vh,12vw)}}
+.gbox.port{right:3%;top:40%;width:min(36vw,22vh);height:min(36vw,22vh)}/*mfix*/.mgrid{position:absolute;z-index:5;left:4%;top:15%;width:min(66%,860px);height:min(76%,560px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}.mgrid .card{position:relative;width:auto;height:auto;min-width:0;min-height:0}.card,.opt,.tile{color:#4a3b52}.has-mem .gbox{left:auto!important;right:1.5%!important;top:26%!important;opacity:1!important;transform:none!important}@media (orientation:portrait){.mgrid{left:5%;right:5%;width:auto;max-width:520px;margin:0 auto;top:11%;height:min(58%,620px);grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}.has-mem .gbox{top:auto!important;bottom:2%!important;right:3%!important;width:min(36vw,22vh);height:min(36vw,22vh);width:min(36vw,22dvh);height:min(36vw,22dvh)}}.qbar{width:max-content}.qbar>span{white-space:normal;min-width:0;text-align:center}.opt.chunk{width:min(46vw,300px,26vh)}@media (orientation:landscape){.opt.chunk{width:min(23vw,300px,44vh)}}@media (orientation:landscape) and (max-height:430px){.mgrid{top:calc(max(8px,env(safe-area-inset-top)) + 52px);height:auto;bottom:3%;gap:8px}.sayCard{top:calc(max(8px,env(safe-area-inset-top)) + 48px)!important;padding:4px 18px!important;border-width:3px!important;font-size:clamp(16px,8vh,30px)!important}.gbox{width:min(25vw,36vh);height:min(25vw,36vh)}.scr .gbox.g-path{height:min(13vh,12vw)}.gpt>span img{max-height:min(13vh,12vw)}.gpt .gst,.gpt .gend{height:min(15vh,14vw)}.sayCard>span[style*="1.6em"]{font-size:1.05em!important}.sayCard .small-en{font-size:12px!important;line-height:1.25!important}.micbtn{width:58px!important;height:58px!important;border-width:4px!important}#stage .big.self{font-size:16px!important;padding:8px 14px!important}.egg{bottom:26%!important}.egg img{width:min(44vw,21vh,260px)}.orow .opt:not(.chunk){width:min(24vw,36vh,180px)!important}.orow .opt .lab{font-size:clamp(16px,9vh,30px)!important}.orow .opt .lab>.zv,.orow .opt .lab :not(.rb)>.zv{font-size:clamp(11px,7vh,22px)}}
 .gbox.win{animation:gwin .5s ease 3}.gbox{transition:left .35s ease,top .35s ease,opacity .3s}.gbox.tight{opacity:.6;transform:scale(.8);transform-origin:center}
 @keyframes gwin{0%,100%{transform:scale(1)}50%{transform:scale(1.12) rotate(-3deg)}}
 .gcont{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:contain;object-position:bottom}
@@ -632,7 +632,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260324';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260345';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -1729,7 +1729,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260324';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260345';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2524,7 +2524,7 @@ window.DINO_btn=id=>{try{document.getElementById(id).click()}catch(e){}};
 </html>
 </script><div id="app"></div>
 <script src="img.js"></script>
-<script src="audio/index.js?v=202611260324"></script>
+<script src="audio/index.js?v=202611260345"></script>
 <script>
 /* 預錄語音播放器（build.js 會把這個檔案整段放進頁面的三個程式裡）。
    頁面原本呼叫系統語音的地方（speechSynthesis、SpeechSynthesisUtterance）在建置時改名成 DINO_TTS、DINO_UTT，
@@ -2567,7 +2567,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260324';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260345';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
