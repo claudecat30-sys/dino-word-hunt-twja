@@ -632,7 +632,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260559';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260700';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -950,13 +950,13 @@ const sayChar=(it,cb)=>speakThen(`${it.c}，${it.words[0]||""}的${it.c}`,cb);
 function speakThen(t,cb){let done=false;const fin=()=>{if(done)return;done=true;cb&&cb()};try{DINO_TTS.cancel();const u=utter(t);u.onend=fin;u.onerror=fin;DINO_TTS.speak(u)}catch(e){}if(cb)setTimeout(fin,3500)}
 const NUMW=["一","二","三","四","五","六","七","八","九","十"];
 const numWord=n=>n<=10?NUMW[n-1]:n<20?"十"+NUMW[n-11]:NUMW[Math.floor(n/10)-1]+"十"+(n%10?NUMW[n%10-1]:"");
-function sayNum(n){speak(numWord(n),1.15)}
+function sayNum(n){speak(numWord(n),1.15)}function sayNumThen(n,cb){let d=false;const f=()=>{if(d)return;d=true;cb()};const S=DINO_TTS,sp=S.speak;try{S.speak=function(u){u.onend=f;u.onerror=f;return sp.call(S,u)};sayNum(n)}catch(e){f()}finally{S.speak=sp}setTimeout(f,1500)}
 /* 一筆一筆畫，每畫一筆就唸出第幾筆 */
 function animateCount(w,n,done){
   if(!w)return;let i=0,stop=false;w._stop&&w._stop();w._stop=()=>{stop=true};
   try{w.cancelQuiz()}catch(e){}
   w.hideCharacter();
-  const step=()=>{if(stop)return;if(i>=n){done&&done();return}sayNum(i+1);w.animateStroke(i,{onComplete:()=>{i++;setTimeout(step,350)}})};
+  const step=()=>{if(stop)return;if(i>=n){done&&done();return}let a=0,b=0,went=0;const nx=()=>{if(went||stop||!a||!b)return;went=1;i++;setTimeout(step,220)};sayNumThen(i+1,()=>{a=1;nx()});w.animateStroke(i,{onComplete:()=>{b=1;nx()}})};
   setTimeout(step,300);
 }
 const sayRad=r=>{const n=RAD_SAY[r]||r;return /^.{2,}(旁|頭|底|水)$/.test(n)?`部首是${n}`:`部首是${n}部`};
@@ -1729,7 +1729,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260559';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260700';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2053,13 +2053,13 @@ function speakThen(t,cb){let done=false;const fin=()=>{if(done)return;done=true;
 const NUMW=["一","二","三","四","五","六","七","八","九","十"];
 const numWord=n=>n<=10?NUMW[n-1]:n<20?"十"+NUMW[n-11]:NUMW[Math.floor(n/10)-1]+"十"+(n%10?NUMW[n%10-1]:"");
 let CNT=null;
-function sayNum(n){if((CNT||LS.get("cnt","zh"))==="en")speak(String(n),1.15,true);else speak(numWord(n),1.15)}
+function sayNum(n){if((CNT||LS.get("cnt","zh"))==="en")speak(String(n),1.15,true);else speak(numWord(n),1.15)}function sayNumThen(n,cb){let d=false;const f=()=>{if(d)return;d=true;cb()};const S=DINO_TTS,sp=S.speak;try{S.speak=function(u){u.onend=f;u.onerror=f;return sp.call(S,u)};sayNum(n)}catch(e){f()}finally{S.speak=sp}setTimeout(f,1500)}
 /* 一筆一筆畫，每畫一筆就唸出第幾筆 */
 function animateCount(w,n,done){
   if(!w)return;let i=0,stop=false;w._stop&&w._stop();w._stop=()=>{stop=true};
   try{w.cancelQuiz()}catch(e){}
   w.hideCharacter();
-  const step=()=>{if(stop)return;if(i>=n){done&&done();return}sayNum(i+1);w.animateStroke(i,{onComplete:()=>{i++;setTimeout(step,350)}})};
+  const step=()=>{if(stop)return;if(i>=n){done&&done();return}let a=0,b=0,went=0;const nx=()=>{if(went||stop||!a||!b)return;went=1;i++;setTimeout(step,220)};sayNumThen(i+1,()=>{a=1;nx()});w.animateStroke(i,{onComplete:()=>{b=1;nx()}})};
   setTimeout(step,300);
 }
 const radZh=r=>{const n=RAD_SAY[r]||r;return /^.{2,}(旁|頭|底|水)$/.test(n)?n:`${n}部`};
@@ -2524,7 +2524,7 @@ window.DINO_btn=id=>{try{document.getElementById(id).click()}catch(e){}};
 </html>
 </script><div id="app"></div>
 <script src="img.js"></script>
-<script src="audio/index.js?v=202611260559"></script>
+<script src="audio/index.js?v=202611260700"></script>
 <script>
 /* 預錄語音播放器（build.js 會把這個檔案整段放進頁面的三個程式裡）。
    頁面原本呼叫系統語音的地方（speechSynthesis、SpeechSynthesisUtterance）在建置時改名成 DINO_TTS、DINO_UTT，
@@ -2567,7 +2567,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260559';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260700';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
