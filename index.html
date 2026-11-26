@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#ff8cc6">
+<meta name="apple-mobile-web-app-capable" content="yes"><script>(function(){try{var u=navigator.userAgent||"";if(u.indexOf("Line/")>=0&&location.search.indexOf("openExternalBrowser=1")<0){location.replace(location.href.split("#")[0]+(location.search?"&":"?")+"openExternalBrowser=1"+location.hash)}}catch(e){}})();</script><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#ff8cc6">
 <title>迪諾文字大尋寶（繁體＋日文）</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
@@ -284,7 +284,7 @@ iframe.lf{position:fixed;inset:0;width:100%;height:100%;border:0;display:none;ba
 .xbtn svg{width:22px;height:22px}
 .xbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #d9456a}
 #lgLayer,#exLayer{position:fixed;left:0;top:0;width:100vw;height:100vh;height:100dvh}
-#lgLayer{z-index:80}#exLayer{z-index:90}
+#lgLayer{z-index:80}#exLayer{z-index:90}#lgLayer.kb .lgwrap{align-items:flex-start}#lgLayer.kb .lgcard{margin:0 0 auto}#lgLayer.kbs .lgwrap .hero{display:none}#lgLayer.kbs .lgwrap{padding-top:calc(max(8px,env(safe-area-inset-top)) + 48px);padding-bottom:8px}#lgLayer.kbs .lgcard{padding:8px 18px 10px;gap:4px;border-radius:24px}#lgLayer.kbs .lgcard h1{font-size:20px;margin:0}#lgLayer.kbs .lgf{font-size:14px;gap:1px}#lgLayer.kbs .lgin input{font-size:17px;padding:5px 12px}#lgLayer.kbs .lgin.pw input{padding-right:50px}#lgLayer.kbs .lgeye{width:36px;height:36px}#lgLayer.kbs .lgrem{font-size:14px}#lgLayer.kbs .lgrem input{width:24px;height:24px}#lgLayer.kbs .lgerr{min-height:16px;font-size:13px;line-height:16px}#lgLayer.kbs .lgcard .big{font-size:20px;padding:6px 40px}
 #exLayer .ovl{position:fixed}
 .lgwrap{position:absolute;inset:0;overflow-y:auto;display:flex;align-items:center;justify-content:center;gap:clamp(8px,2vw,24px);padding:calc(max(10px,env(safe-area-inset-top)) + 50px) 14px calc(max(12px,env(safe-area-inset-bottom)) + 8px)}
 .lgwrap .hero{height:min(40vh,260px);flex:none;filter:drop-shadow(0 6px 8px rgba(0,0,0,.3));animation:bob 2.4s infinite}
@@ -632,7 +632,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260532';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260541';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -1729,7 +1729,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260532';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260541';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2524,7 +2524,7 @@ window.DINO_btn=id=>{try{document.getElementById(id).click()}catch(e){}};
 </html>
 </script><div id="app"></div>
 <script src="img.js"></script>
-<script src="audio/index.js?v=202611260532"></script>
+<script src="audio/index.js?v=202611260541"></script>
 <script>
 /* 預錄語音播放器（build.js 會把這個檔案整段放進頁面的三個程式裡）。
    頁面原本呼叫系統語音的地方（speechSynthesis、SpeechSynthesisUtterance）在建置時改名成 DINO_TTS、DINO_UTT，
@@ -2567,7 +2567,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260532';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260541';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2688,7 +2688,7 @@ function onRotate(){const p=isPort();if(p===_port)return;_port=p;document.queryS
 addEventListener("resize",onRotate);addEventListener("orientationchange",()=>setTimeout(onRotate,250));
 /* 全螢幕：第一次點擊時自動進入（安卓、電腦；iPhone 用「加入主畫面」） */
 function goFull(){const d=document.documentElement,f=d.requestFullscreen||d.webkitRequestFullscreen;if(f&&!document.fullscreenElement&&!document.webkitFullscreenElement){try{const r=f.call(d,{navigationUI:"hide"});if(r&&r.catch)r.catch(()=>{})}catch(e){}}}
-addEventListener("pointerup",()=>{if(!window.__noFull)goFull()});
+addEventListener("pointerup",()=>{if(!window.__noFull)goFull()});(function(){try{const ua=navigator.userAgent||"";const app=ua.indexOf("Line/")>=0||/FBAN|FBAV|FB_IAB|Instagram|MicroMessenger/i.test(ua);const ios=/iPhone|iPod/.test(ua);const mm=q=>!!(window.matchMedia&&matchMedia(q).matches);if(navigator.standalone===true||mm("(display-mode: standalone)")||mm("(display-mode: fullscreen)"))return;const kind=app?"app":ios?"ios":"";if(!kind)return;const K="dinohunt_fshint";let n=0;try{n=+(localStorage.getItem(K)||0)}catch(e){}if(n>=3)return;try{localStorage.setItem(K,n+1)}catch(e){}const T={"ios":{"tw":"想要全螢幕：點 Safari 的分享鈕，選「加入主畫面」，再從主畫面開啟。","cn":"想要全屏：点 Safari 的分享按钮，选“添加到主屏幕”，再从主屏幕打开。","en":"For full screen: tap Share in Safari, choose \"Add to Home Screen\", then open it from the Home Screen.","ja":"全画面にするには：Safari の共有ボタンから「ホーム画面に追加」を選び、ホーム画面から開いてください。"},"app":{"tw":"這個 App 裡的瀏覽器不能全螢幕。請點選單，選「用瀏覽器開啟」。","cn":"这个 App 里的浏览器不能全屏。请点菜单，选“在浏览器中打开”。","en":"This in-app browser can't go full screen. Open the menu and choose \"Open in browser\".","ja":"このアプリ内のブラウザでは全画面にできません。メニューから「ブラウザで開く」を選んでください。"}};const a=T[kind][VARIANT.indexOf("cn")===0?"cn":"tw"],b=T[kind][(document.documentElement.lang||"").indexOf("ja")===0?"ja":"en"];const d=document.createElement("div");d.id="fsHint";d.style.cssText="position:fixed;left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));z-index:99999;max-width:560px;margin:0 auto;background:rgba(255,255,255,.97);border:3px solid #ffd1e8;border-radius:16px;padding:8px 42px 8px 12px;font-size:14px;line-height:1.4;color:#4a3b52;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.25);user-select:text";const p=document.createElement("div");p.textContent=a;const q=document.createElement("div");q.textContent=b;q.style.cssText="font-weight:500;font-size:12.5px;margin-top:2px";const x=document.createElement("button");x.textContent="×";x.setAttribute("aria-label","close");x.style.cssText="position:absolute;right:6px;top:6px;width:30px;height:30px;border-radius:50%;background:#ffe1f0;color:#e2559b;font-size:18px;font-weight:900;line-height:1;padding:0";x.onclick=e=>{e.stopPropagation();try{localStorage.setItem(K,99)}catch(e2){}d.remove()};d.appendChild(p);d.appendChild(q);d.appendChild(x);const add=()=>{document.body.appendChild(d);setTimeout(()=>d.remove(),20000)};if(document.body)add();else addEventListener("DOMContentLoaded",add)}catch(e){}})();
 let LANG=localStorage.getItem(LSK+"mode")||"zh";
 const F={};
 function frame(m){if(!F[m]){const f=document.createElement("iframe");f.className="lf";f.title=m==="zh"?"中文":"日本語";f.setAttribute("allow","autoplay; microphone");f.srcdoc=SRC[m];document.body.insertBefore(f,document.body.firstChild);F[m]=f}return F[m]}
@@ -3594,7 +3594,7 @@ function lgCheck(u,p){return lgAccounts().some(x=>Array.isArray(x)&&String(x[0])
 const lgEnc=s=>btoa(unescape(encodeURIComponent(s))),lgDec=s=>decodeURIComponent(escape(atob(s)));
 function lgSaved(){try{const o=JSON.parse(localStorage.getItem(LSK+"login")||"null");if(o&&o.exp>Date.now())return {u:lgDec(o.u),p:lgDec(o.p)};localStorage.removeItem(LSK+"login")}catch(e){}return null}
 function lgSave(u,p,keep){try{if(keep)localStorage.setItem(LSK+"login",JSON.stringify({u:lgEnc(u),p:lgEnc(p),exp:Date.now()+LG_DAYS*864e5}));else localStorage.removeItem(LSK+"login")}catch(e){}}
-function showLogin(keepVals){
+function lgFit(){const L=document.getElementById("lgLayer"),vv=window.visualViewport;if(!L)return;const kb=!!vv&&window.innerHeight-vv.height>120;L.classList.toggle("kb",kb);L.classList.toggle("kbs",kb&&vv.height<460);const w=L.querySelector(".lgwrap");if(w){w.style.height=kb?vv.height+"px":"";w.style.top=kb?vv.offsetTop+"px":"";w.style.bottom=kb?"auto":""}xbtnPos(L);const a=document.activeElement;if(kb&&w&&a&&a.tagName==="INPUT"&&L.contains(a)){const r=a.getBoundingClientRect(),q=w.getBoundingClientRect();w.scrollTop+=r.top+r.height/2-(q.top+q.height/2)}}function lgFitOn(L){if(!window.__lgFit){window.__lgFit=1;const vv=window.visualViewport;if(vv){vv.addEventListener("resize",lgFit);vv.addEventListener("scroll",lgFit)}}if(L.__fit)return;L.__fit=1;L.addEventListener("focusin",()=>{setTimeout(lgFit,60);setTimeout(lgFit,450)});L.addEventListener("focusout",()=>setTimeout(lgFit,250))}function showLogin(keepVals){
  let L0=document.getElementById("lgLayer");const old=L0&&keepVals?{u:L0.querySelector("#lgU").value,p:L0.querySelector("#lgP").value,r:L0.querySelector("#lgR").checked,s:L0.querySelector("#lgP").type==="text"}:null;
  if(!L0){L0=document.createElement("div");L0.id="lgLayer";document.body.appendChild(L0)}
  const sv0=old?null:lgSaved();const sv=sv0&&lgCheck(sv0.u,sv0.p)?sv0:null;const pf=window.DINO_LOGIN_PREFILL;const val=old||(sv?{u:sv.u,p:sv.p,r:true,s:false}:pf?{u:String(lgAccounts()[0][0]),p:pf===true?String(lgAccounts()[0][1]):"",r:false,s:false}:{u:"",p:"",r:false,s:false});
@@ -3607,7 +3607,7 @@ function showLogin(keepVals){
   <label class="lgrem"><input id="lgR" type="checkbox"><span>${esc(lgt("remember"))}</span></label>
   <div class="lgerr" id="lgErr" role="alert"></div>
   <button type="submit" class="big" id="lgGo">${esc(lgt("login"))}</button>
- </form></div>${langBox()}${xbtn()}`;xbtnPos(L0);
+ </form></div>${langBox()}${xbtn()}`;xbtnPos(L0);lgFitOn(L0);lgFit();
  const U=L0.querySelector("#lgU"),P=L0.querySelector("#lgP"),R=L0.querySelector("#lgR"),E=L0.querySelector("#lgErr"),eye=L0.querySelector("#lgEye");
  U.value=val.u;P.value=val.p;R.checked=val.r;
  const setEye=s=>{P.type=s?"text":"password";eye.innerHTML=s?LG_EYE_OFF:LG_EYE;eye.title=lgt(s?"hide":"show");eye.setAttribute("aria-label",lgt(s?"hide":"show"));eye.setAttribute("aria-pressed",s?"true":"false")};
