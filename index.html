@@ -632,7 +632,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611250741';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260140';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -1729,7 +1729,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611250741';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260140';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2524,7 +2524,7 @@ window.DINO_btn=id=>{try{document.getElementById(id).click()}catch(e){}};
 </html>
 </script><div id="app"></div>
 <script src="img.js"></script>
-<script src="audio/index.js?v=202611250741"></script>
+<script src="audio/index.js?v=202611260140"></script>
 <script>
 /* 預錄語音播放器（build.js 會把這個檔案整段放進頁面的三個程式裡）。
    頁面原本呼叫系統語音的地方（speechSynthesis、SpeechSynthesisUtterance）在建置時改名成 DINO_TTS、DINO_UTT，
@@ -2567,7 +2567,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611250741';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260140';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -3589,7 +3589,7 @@ function xbtn(){return `<button class="xbtn" data-exit="1" title="${esc(lgt("exi
 /* 關閉按鈕排在右上角語言切換鈕的左邊（語言鈕寬度各版不同，所以用量的） */
 function xbtnPos(box){try{const x=box.querySelector(".xbtn"),l=box.querySelector(".lang");if(x&&l&&l.offsetWidth){x.style.right=(12+l.offsetWidth+8)+"px";x.style.top=(l.offsetTop+(l.offsetHeight-x.offsetHeight)/2)+"px"}}catch(e){}}
 /* 帳號清單：accounts.js 的 window.DINO_ACCOUNTS=[["帳號","密碼"],…]；沒有就用預設 */
-function lgAccounts(){const a=window.DINO_ACCOUNTS;return Array.isArray(a)&&a.length?a:[["dino","dino2026"]]}
+function lgAccounts(){const a=window.DINO_ACCOUNTS;return Array.isArray(a)&&a.length?a:[["jordan105","jordan105"]]}
 function lgCheck(u,p){return lgAccounts().some(x=>Array.isArray(x)&&String(x[0]).trim().toLowerCase()===u.toLowerCase()&&String(x[1])===p)}
 const lgEnc=s=>btoa(unescape(encodeURIComponent(s))),lgDec=s=>decodeURIComponent(escape(atob(s)));
 function lgSaved(){try{const o=JSON.parse(localStorage.getItem(LSK+"login")||"null");if(o&&o.exp>Date.now())return {u:lgDec(o.u),p:lgDec(o.p)};localStorage.removeItem(LSK+"login")}catch(e){}return null}
@@ -3597,7 +3597,7 @@ function lgSave(u,p,keep){try{if(keep)localStorage.setItem(LSK+"login",JSON.stri
 function showLogin(keepVals){
  let L0=document.getElementById("lgLayer");const old=L0&&keepVals?{u:L0.querySelector("#lgU").value,p:L0.querySelector("#lgP").value,r:L0.querySelector("#lgR").checked,s:L0.querySelector("#lgP").type==="text"}:null;
  if(!L0){L0=document.createElement("div");L0.id="lgLayer";document.body.appendChild(L0)}
- const sv=old?null:lgSaved();const val=old||(sv?{u:sv.u,p:sv.p,r:true,s:false}:window.DINO_LOGIN_PREFILL?{u:String(lgAccounts()[0][0]),p:String(lgAccounts()[0][1]),r:false,s:false}:{u:"",p:"",r:false,s:false});
+ const sv0=old?null:lgSaved();const sv=sv0&&lgCheck(sv0.u,sv0.p)?sv0:null;const pf=window.DINO_LOGIN_PREFILL;const val=old||(sv?{u:sv.u,p:sv.p,r:true,s:false}:pf?{u:String(lgAccounts()[0][0]),p:pf===true?String(lgAccounts()[0][1]):"",r:false,s:false}:{u:"",p:"",r:false,s:false});
  L0.innerHTML=`<div class="bg dim" ${BG("G-01")}></div>
  <div class="lgwrap"><img class="hero" src="${im("d_wave")}" alt="">
  <form class="lgcard" id="lgForm" autocomplete="off" novalidate>
