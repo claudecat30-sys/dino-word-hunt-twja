@@ -230,7 +230,7 @@ iframe.lf{position:fixed;inset:0;width:100%;height:100%;border:0;display:none;ba
 /* ---- 互動目標 ---- */
 .gbox{position:absolute;z-index:6;right:1.5%;top:26%;width:min(25vw,42vh);height:min(25vw,42vh);pointer-events:none;background:rgba(255,255,255,.55);border:4px solid rgba(255,255,255,.95);border-radius:24px;box-shadow:0 8px 18px rgba(60,20,80,.22);padding:3%}
 .gbox>*{position:absolute}.gbox .gcont,.gbox .gin,.gbox .gpz,.gbox .gbd,.gbox .gctr,.gbox .gfr{margin:4%}
-.gbox.port{right:3%;top:40%;width:min(36vw,22vh);height:min(36vw,22vh)}/*mfix*/.mgrid{position:absolute;z-index:5;left:4%;top:15%;width:min(66%,860px);height:min(76%,560px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}.mgrid .card{position:relative;width:auto;height:auto;min-width:0;min-height:0;container-type:size}.mgrid .card .f{font-size:clamp(16px,min(52cqh,60cqw),60px)}.mgrid .card .f .zv{font-size:clamp(11px,min(24cqh,22cqw),46px)}.has-mem .gbox{left:auto!important;right:1.5%!important;top:26%!important;opacity:1!important;transform:none!important}@media (orientation:portrait){.mgrid{left:5%;right:5%;width:auto;max-width:520px;margin:0 auto;top:11%;height:min(58%,620px);grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}.has-mem .gbox{top:auto!important;bottom:2%!important;right:3%!important;width:min(36vw,22vh);height:min(36vw,22vh);width:min(36vw,22dvh);height:min(36vw,22dvh)}}.qbar{width:max-content}.qbar>span{white-space:normal;min-width:0;text-align:center}.opt.chunk{width:min(46vw,300px,26vh)}@media (orientation:landscape){.opt.chunk{width:min(23vw,300px,44vh)}}@media (orientation:landscape) and (max-height:430px){.mgrid{top:calc(max(8px,env(safe-area-inset-top)) + 52px);height:auto;bottom:3%;gap:8px}.sayCard{top:calc(max(8px,env(safe-area-inset-top)) + 48px)!important;padding:4px 18px!important;border-width:3px!important;font-size:clamp(16px,8vh,30px)!important}.gbox{width:min(25vw,36vh);height:min(25vw,36vh)}.gbox.g-path{height:min(13vh,12vw)}}
+.gbox.port{right:3%;top:40%;width:min(36vw,22vh);height:min(36vw,22vh)}/*mfix*/.mgrid{position:absolute;z-index:5;left:4%;top:15%;width:min(66%,860px);height:min(76%,560px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}.mgrid .card{position:relative;width:auto;height:auto;min-width:0;min-height:0}.card,.opt,.tile{color:#4a3b52}.has-mem .gbox{left:auto!important;right:1.5%!important;top:26%!important;opacity:1!important;transform:none!important}@media (orientation:portrait){.mgrid{left:5%;right:5%;width:auto;max-width:520px;margin:0 auto;top:11%;height:min(58%,620px);grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}.has-mem .gbox{top:auto!important;bottom:2%!important;right:3%!important;width:min(36vw,22vh);height:min(36vw,22vh);width:min(36vw,22dvh);height:min(36vw,22dvh)}}.qbar{width:max-content}.qbar>span{white-space:normal;min-width:0;text-align:center}.opt.chunk{width:min(46vw,300px,26vh)}@media (orientation:landscape){.opt.chunk{width:min(23vw,300px,44vh)}}@media (orientation:landscape) and (max-height:430px){.mgrid{top:calc(max(8px,env(safe-area-inset-top)) + 52px);height:auto;bottom:3%;gap:8px}.sayCard{top:calc(max(8px,env(safe-area-inset-top)) + 48px)!important;padding:4px 18px!important;border-width:3px!important;font-size:clamp(16px,8vh,30px)!important}.gbox{width:min(25vw,36vh);height:min(25vw,36vh)}.gbox.g-path{height:min(13vh,12vw)}}
 .gbox.win{animation:gwin .5s ease 3}.gbox{transition:left .35s ease,top .35s ease,opacity .3s}.gbox.tight{opacity:.6;transform:scale(.8);transform-origin:center}
 @keyframes gwin{0%,100%{transform:scale(1)}50%{transform:scale(1.12) rotate(-3deg)}}
 .gcont{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:contain;object-position:bottom}
@@ -632,7 +632,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260303';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260324';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -1729,7 +1729,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260303';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260324';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2524,7 +2524,7 @@ window.DINO_btn=id=>{try{document.getElementById(id).click()}catch(e){}};
 </html>
 </script><div id="app"></div>
 <script src="img.js"></script>
-<script src="audio/index.js?v=202611260303"></script>
+<script src="audio/index.js?v=202611260324"></script>
 <script>
 /* 預錄語音播放器（build.js 會把這個檔案整段放進頁面的三個程式裡）。
    頁面原本呼叫系統語音的地方（speechSynthesis、SpeechSynthesisUtterance）在建置時改名成 DINO_TTS、DINO_UTT，
@@ -2567,7 +2567,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260303';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260324';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2899,7 +2899,7 @@ GAMES[1]=[
    /* 牌位由 .mgrid 樣式排版，轉向時自動重排 */
    cards.forEach((cd,k)=>{const d=document.createElement("button");d.className="card";d.style.cssText="background:none;padding:0";
     d.innerHTML=`<div class="in"><div class="b"><img src="${im("donut")}"></div><div class="f">${cd.t==="c"?`<span class="ch">${esc(cd.x.c)}</span>`:ZV(cd.x.z)}</div></div>`;
-    d.onclick=()=>flip(d,cd);grid.appendChild(d)});
+    d.onclick=()=>flip(d,cd);grid.appendChild(d)});fitCards(grid);
   }
   async function flip(d,cd){if(lock||A.ended||d.classList.contains("open"))return;d.classList.add("open");SFX.flip();sayList([[cd.x.c,"zh"]]);open.push([d,cd]);
    if(open.length<2)return;lock=true;const [[d1,c1],[d2,c2]]=open;open=[];await sleep(650);
@@ -3088,7 +3088,7 @@ const TASK={sound:["聽聲音，找出聽到的字","聞いて、聞こえた字
  wordblank:["找出語詞裡缺少的字","単語のたりない字をさがそう"],homophone:["找出正確的同音字","同じ読み方の字から正しいものをえらぼう"],idiom:["找出成語裡缺少的字","成語のたりない字をさがそう"],
  sentence:["找出句子裡缺少的字","文のたりない字をさがそう"],idiomsent:["選出句子裡最適合的成語","文に合う成語をえらぼう"],wrongword:["找出有錯字的語詞","まちがった字がある単語をさがそう"],chain:["語詞接龍，找出下一個語詞","しりとり：次の単語をさがそう"]};
 function hero(A,src){let h=A.stage.querySelector(".ghero");if(!h){h=document.createElement("img");h.className="ghero dino";h.style.cssText="left:1%;top:26%;bottom:auto;z-index:6;width:clamp(70px,11vw,140px);pointer-events:none";A.stage.appendChild(h)}h.src=im(src);return h}
-function fitSay(card,egg){if(!card||!egg)return;const els=[card,...card.querySelectorAll(".wordq,.small-en")];els.forEach(x=>x.style.fontSize="");const im=egg.querySelector("img");if(im&&!im.complete)im.addEventListener("load",()=>fitSay(card,egg),{once:true});const base=els.map(x=>parseFloat(getComputedStyle(x).fontSize));let s=1,k=0;while(card.getBoundingClientRect().bottom>egg.getBoundingClientRect().top-6&&k++<14){s*=.93;els.forEach((x,i)=>x.style.fontSize=Math.max(11,base[i]*s)+"px")}}function promptCard(A,top){const c=document.createElement("div");c.className="sayCard";c.style.cssText=`position:absolute;left:50%;top:${top||13}%;transform:translateX(-50%);z-index:9;font-size:clamp(24px,3.6vw,38px);font-weight:800;width:max-content;max-width:94vw`;A.stage.appendChild(c);return c}
+function fitCards(grid){const run=()=>{if(!grid.isConnected)return;grid.querySelectorAll(".card").forEach(c=>{const f=c.querySelector(".f");if(!f)return;const h=c.clientHeight,w=c.clientWidth;if(!h||!w)return;f.querySelectorAll(".zv").forEach(x=>{if(x.parentNode!==f)x.style.fontSize=".36em"});let fs=Math.max(14,Math.min(h*.5,w*.58,60));f.style.fontSize=fs+"px";const z=[...f.children].find(x=>x.classList&&x.classList.contains("zv"));let zs=0;if(z){zs=Math.max(10,Math.min(h*.22,w*.2,46));z.style.fontSize=zs+"px"}let k=0;while((f.scrollHeight>f.clientHeight+1||f.scrollWidth>f.clientWidth+1)&&k++<14){fs*=.9;f.style.fontSize=fs+"px";if(z){zs*=.9;z.style.fontSize=zs+"px"}}})};run();requestAnimationFrame(run);setTimeout(run,400);if(!grid._fit){grid._fit=1;addEventListener("resize",run);addEventListener("orientationchange",()=>setTimeout(run,350));if(window.ResizeObserver)new ResizeObserver(run).observe(grid)}}function fitSay(card,egg){if(!card||!egg)return;const els=[card,...card.querySelectorAll(".wordq,.small-en")];els.forEach(x=>x.style.fontSize="");const im=egg.querySelector("img");if(im&&!im.complete)im.addEventListener("load",()=>fitSay(card,egg),{once:true});const base=els.map(x=>parseFloat(getComputedStyle(x).fontSize));let s=1,k=0;while(card.getBoundingClientRect().bottom>egg.getBoundingClientRect().top-6&&k++<14){s*=.93;els.forEach((x,i)=>x.style.fontSize=Math.max(11,base[i]*s)+"px")}}function promptCard(A,top){const c=document.createElement("div");c.className="sayCard";c.style.cssText=`position:absolute;left:50%;top:${top||13}%;transform:translateX(-50%);z-index:9;font-size:clamp(24px,3.6vw,38px);font-weight:800;width:max-content;max-width:94vw`;A.stage.appendChild(c);return c}
 function sayQ(Q){sayList(Q.say)}
 /* ---- 點選型 ---- */
 function mkPick(cfg){return function(A){
@@ -3175,7 +3175,7 @@ function mkMemory(cfg){return function(A){
   cards=shuffle(cards);left=cards.length/2;
   A.gs.classList.add("has-mem");const grid=document.createElement("div");grid.className="mgrid";S.appendChild(grid);
   cards.forEach((cd,k)=>{const d=document.createElement("button");d.className="card";d.style.cssText="background:none;padding:0";
-   d.innerHTML=`<div class="in"><div class="b"><img src="${im(cfg.back)}"></div><div class="f">${cd.h}</div></div>`;d.onclick=()=>flip(d,cd);grid.appendChild(d)});
+   d.innerHTML=`<div class="in"><div class="b"><img src="${im(cfg.back)}"></div><div class="f">${cd.h}</div></div>`;d.onclick=()=>flip(d,cd);grid.appendChild(d)});fitCards(grid);
  }
  async function flip(d,cd){if(lock||A.ended||d.classList.contains("open"))return;d.classList.add("open");SFX.flip();sayList([[cd.say,cd.en?"en":"zh"]]);open.push([d,cd]);if(open.length<2)return;lock=true;const [[d1,c1],[d2,c2]]=open;open=[];await sleep(700);
   if(c1.id===c2.id&&c1!==c2){SFX.ok();const [x,y]=centerOf(d2);A.add(10,x,y);d1.classList.add("done");d2.classList.add("done");A.good(d2);left--;if(left<=0){A.add(10);await sleep(700);board()}}
