@@ -230,7 +230,7 @@ iframe.lf{position:fixed;inset:0;width:100%;height:100%;border:0;display:none;ba
 /* ---- 互動目標 ---- */
 .gbox{position:absolute;z-index:6;right:1.5%;top:26%;width:min(25vw,42vh);height:min(25vw,42vh);pointer-events:none;background:rgba(255,255,255,.55);border:4px solid rgba(255,255,255,.95);border-radius:24px;box-shadow:0 8px 18px rgba(60,20,80,.22);padding:3%}
 .gbox>*{position:absolute}.gbox .gcont,.gbox .gin,.gbox .gpz,.gbox .gbd,.gbox .gctr,.gbox .gfr{margin:4%}
-.gbox.port{right:3%;top:40%;width:min(36vw,22vh);height:min(36vw,22vh)}
+.gbox.port{right:3%;top:40%;width:min(36vw,22vh);height:min(36vw,22vh)}/*mfix*/.mgrid{position:absolute;z-index:5;left:4%;top:15%;width:min(66%,860px);height:min(76%,560px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}.mgrid .card{position:relative;width:auto;height:auto;min-width:0;min-height:0;container-type:size}.mgrid .card .f{font-size:clamp(16px,min(52cqh,60cqw),60px)}.mgrid .card .f .zv{font-size:clamp(11px,min(24cqh,22cqw),46px)}.has-mem .gbox{left:auto!important;right:1.5%!important;top:26%!important;opacity:1!important;transform:none!important}@media (orientation:portrait){.mgrid{left:5%;right:5%;width:auto;max-width:520px;margin:0 auto;top:11%;height:min(58%,620px);grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}.has-mem .gbox{top:auto!important;bottom:2%!important;right:3%!important;width:min(36vw,22vh);height:min(36vw,22vh);width:min(36vw,22dvh);height:min(36vw,22dvh)}}.qbar{width:max-content}.qbar>span{white-space:normal;min-width:0;text-align:center}.opt.chunk{width:min(46vw,300px,26vh)}@media (orientation:landscape){.opt.chunk{width:min(23vw,300px,44vh)}}@media (orientation:landscape) and (max-height:430px){.mgrid{top:calc(max(8px,env(safe-area-inset-top)) + 52px);height:auto;bottom:3%;gap:8px}.sayCard{top:calc(max(8px,env(safe-area-inset-top)) + 48px)!important;padding:4px 18px!important;border-width:3px!important;font-size:clamp(16px,8vh,30px)!important}.gbox{width:min(25vw,36vh);height:min(25vw,36vh)}.gbox.g-path{height:min(13vh,12vw)}}
 .gbox.win{animation:gwin .5s ease 3}.gbox{transition:left .35s ease,top .35s ease,opacity .3s}.gbox.tight{opacity:.6;transform:scale(.8);transform-origin:center}
 @keyframes gwin{0%,100%{transform:scale(1)}50%{transform:scale(1.12) rotate(-3deg)}}
 .gcont{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:contain;object-position:bottom}
@@ -632,7 +632,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260140';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260303';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -1729,7 +1729,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260140';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260303';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2524,7 +2524,7 @@ window.DINO_btn=id=>{try{document.getElementById(id).click()}catch(e){}};
 </html>
 </script><div id="app"></div>
 <script src="img.js"></script>
-<script src="audio/index.js?v=202611260140"></script>
+<script src="audio/index.js?v=202611260303"></script>
 <script>
 /* 預錄語音播放器（build.js 會把這個檔案整段放進頁面的三個程式裡）。
    頁面原本呼叫系統語音的地方（speechSynthesis、SpeechSynthesisUtterance）在建置時改名成 DINO_TTS、DINO_UTT，
@@ -2567,7 +2567,7 @@ function _split(L,seg,has){
  return r}
 
   var BASE = 'audio/';
-  var VER = '202611260140';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
+  var VER = '202611260303';   /* 建置時填入版本；重錄的音檔檔名不變，加版本參數避免瀏覽器播到舊快取 */
   var IX = null;
   function index() {
     if (IX) return IX;
@@ -2895,11 +2895,11 @@ GAMES[1]=[
    const items=shuffle(LIST(1).filter(x=>!/[˙]/.test(x.z))).slice(0,6);
    const seen=new Set();const uniq=items.filter(x=>!seen.has(x.z)&&seen.add(x.z));
    const cards=shuffle(uniq.flatMap(x=>[{x,t:"c"},{x,t:"z"}]));left=uniq.length;
-   const gw=Math.min(innerWidth*(port?.9:.66),port?520:860),gh=Math.min(innerHeight*(port?.58:.76),port?620:560);const cw=gw/C,chh=gh/R;
-   const ox=port?(innerWidth-gw)/2:innerWidth*.04,oy=innerHeight*(port?.11:.15);
-   cards.forEach((cd,k)=>{const d=document.createElement("button");d.className="card";d.style.cssText=`left:${ox+(k%C)*cw+6}px;top:${oy+Math.floor(k/C)*chh+6}px;width:${cw-12}px;height:${chh-12}px;background:none;padding:0`;
+   A.gs.classList.add("has-mem");const grid=document.createElement("div");grid.className="mgrid";S.appendChild(grid);
+   /* 牌位由 .mgrid 樣式排版，轉向時自動重排 */
+   cards.forEach((cd,k)=>{const d=document.createElement("button");d.className="card";d.style.cssText="background:none;padding:0";
     d.innerHTML=`<div class="in"><div class="b"><img src="${im("donut")}"></div><div class="f">${cd.t==="c"?`<span class="ch">${esc(cd.x.c)}</span>`:ZV(cd.x.z)}</div></div>`;
-    d.onclick=()=>flip(d,cd);S.appendChild(d)});
+    d.onclick=()=>flip(d,cd);grid.appendChild(d)});
   }
   async function flip(d,cd){if(lock||A.ended||d.classList.contains("open"))return;d.classList.add("open");SFX.flip();sayList([[cd.x.c,"zh"]]);open.push([d,cd]);
    if(open.length<2)return;lock=true;const [[d1,c1],[d2,c2]]=open;open=[];await sleep(650);
@@ -3119,7 +3119,7 @@ function mkFall(cfg){return function(A){
  const S=A.stage,g=cfg.g;let Q,items=[],raf=0,last=0,spawnT=0,sinceAns=0;
  const q=qbar("",1);S.appendChild(q);q.querySelector("#qrep").onclick=()=>sayQ(Q);
  if(cfg.hero)hero(A,cfg.hero);
- const holes=cfg.mode==="pop"?(innerHeight>innerWidth?[[22,40],[70,40],[22,60],[70,60],[22,80],[70,80]]:[[18,45],[50,45],[82,45],[18,75],[50,75],[82,75]]):null;
+ const holes=cfg.mode==="pop"?[]:null;const setH=()=>{if(holes){holes.length=0;holes.push(...(innerHeight>innerWidth?[[22,40],[70,40],[22,60],[70,60],[22,80],[70,80]]:[[18,45],[50,45],[82,45],[18,75],[50,75],[82,75]]))}};setH();addEventListener("resize",setH);
  function newQ(){Q=Qgen(cfg.q,g);q.querySelector("span").innerHTML=Q.html;sayQ(Q);items.forEach(it=>it.el.remove());items=[];sinceAns=0;spawnT=0}
  function spawn(){const correct=sinceAns>=2||Math.random()<.4;let o=correct?Q.opts.find(o=>o.k===Q.ans):pick(Q.opts.filter(o=>o.k!==Q.ans));sinceAns=correct?0:sinceAns+1;
   const el=document.createElement("button");el.className="tile";const sz=Math.min(innerWidth*.26,innerHeight*.2,170);el.style.cssText=`width:${sz}px;height:${sz}px;background:none;z-index:8`;
@@ -3154,7 +3154,7 @@ function mkOrder(cfg){return function(A){
   card.innerHTML=`<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">${parts.map((p,k)=>`<span class="slot" data-k="${k}" style="min-width:${cfg.src==="chunks"?"2.2em":"1.25em"};height:1.4em;border:3px dashed #ff8cc6;border-radius:12px;background:#fff0f8;display:inline-flex;align-items:center;justify-content:center;padding:0 4px"></span>`).join("")}</div>${z?`<div style="font-size:.7em;margin-top:4px">${z.map(v=>ZV(v)).join(" ")}</div>`:""}${LANG==="en"&&en?`<div class="small-en en" data-say="${esc(en)}">${esc(en)}</div>`:""}`;
   const row=document.createElement("div");row.className="orow";row.style.bottom="5%";S.appendChild(row);
   let tiles=parts.map((p,k)=>({p,k}));if(cfg.src!=="chunks"){const ex=others(LIST(g),{c:""},1,y=>!parts.includes(y.c))[0];if(ex)tiles.push({p:ex.c,k:-1})}
-  shuffle(tiles).forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.style.cssText=cfg.src==="chunks"?"width:min(46vw,300px)":"width:min(22vw,19vh,150px)";
+  shuffle(tiles).forEach((t,i)=>{const b=document.createElement("button");b.className=cfg.src==="chunks"?"opt chunk":"opt";b.style.cssText=cfg.src==="chunks"?"":"width:min(22vw,19vh,150px)";
    b.innerHTML=`<img src="${im(cfg.sp[i%cfg.sp.length])}"><span class="tx"><span class="lab ch" style="background:rgba(255,255,255,.92);border-radius:14px;padding:2px 8px;font-size:${cfg.src==="chunks"?"clamp(16px,2.6vw,26px)":"clamp(28px,4.2vw,46px)"};white-space:normal">${cfg.src==="chunks"?RS(t.p):(z&&t.k>=0?RC(t.p,z[t.k]):RC(t.p,(CH[t.p]||{}).z||""))}</span></span>`;
    b._t=t;b.onclick=()=>tap(b,t);row.appendChild(b)});
   sayList(LANG==="zh"?[[cfg.src==="chunks"?"照順序點，排出句子":"照順序點，拼出"+(cfg.src==="idiom"?"成語":"語詞"),"zh"]]:[[cfg.src==="chunks"?"順番にタップして文を作ろう":"順番にタップして"+(cfg.src==="idiom"?"成語":"単語")+"を作ろう","en"]]);
@@ -3168,14 +3168,14 @@ function mkOrder(cfg){return function(A){
 /* ---- 翻牌型 ---- */
 function mkMemory(cfg){return function(A){
  const S=A.stage,g=cfg.g;let open=[],lock=false,left;
- function board(){if(A.ended)return;S.querySelectorAll(".card").forEach(e=>e.remove());const port=innerHeight>innerWidth;const C=port?3:4,R=port?4:3;let cards=[];
+ function board(){if(A.ended)return;S.querySelectorAll(".mgrid,.card").forEach(e=>e.remove());const port=innerHeight>innerWidth;const C=port?3:4,R=port?4:3;let cards=[];
   if(cfg.pair==="radical"){const by={};LIST(g).forEach(x=>{if(x.r)(by[x.r]=by[x.r]||[]).push(x)});const rs=shuffle(Object.keys(by).filter(r=>by[r].length>=2)).slice(0,6);rs.forEach(r=>{const [a,b]=shuffle(by[r]);cards.push({id:r,h:`<span class="ch">${RC(a.c,a.z)}</span>`,say:a.c},{id:r,h:`<span class="ch">${RC(b.c,b.z)}</span>`,say:b.c})})}
   else if(cfg.pair==="en"){const W=uniqBy(shuffle(allWords(g).filter(w=>w.en&&w.en.length<22)),w=>w.en).slice(0,6);W.forEach(w=>cards.push({id:w.w,h:`<span class="ch" style="font-size:.7em">${RZ(w.w,w.z.split(" "))}</span>`,say:w.w},{id:w.w,h:`<span style="font-family:system-ui;font-weight:800;font-size:.38em;line-height:1.2;padding:4px">${esc(w.en)}</span>`,say:w.en,en:1}))}
   else{const W=uniqBy(shuffle(LIST(g)),x=>x.z).slice(0,6);W.forEach(x=>cards.push({id:x.c,h:`<span class="ch">${esc(x.c)}</span>`,say:x.c},{id:x.c,h:ZV(x.z),say:x.c}))}
   cards=shuffle(cards);left=cards.length/2;
-  const gw=Math.min(innerWidth*(port?.9:.66),port?520:860),gh=Math.min(innerHeight*(port?.52:.76),port?560:560);const cw=gw/C,chh=gh/R;const ox=port?(innerWidth-gw)/2:innerWidth*.04,oy=innerHeight*.15;
-  cards.forEach((cd,k)=>{const d=document.createElement("button");d.className="card";d.style.cssText=`left:${ox+(k%C)*cw+6}px;top:${oy+Math.floor(k/C)*chh+6}px;width:${cw-12}px;height:${chh-12}px;background:none;padding:0`;
-   d.innerHTML=`<div class="in"><div class="b"><img src="${im(cfg.back)}"></div><div class="f">${cd.h}</div></div>`;d.onclick=()=>flip(d,cd);S.appendChild(d)});
+  A.gs.classList.add("has-mem");const grid=document.createElement("div");grid.className="mgrid";S.appendChild(grid);
+  cards.forEach((cd,k)=>{const d=document.createElement("button");d.className="card";d.style.cssText="background:none;padding:0";
+   d.innerHTML=`<div class="in"><div class="b"><img src="${im(cfg.back)}"></div><div class="f">${cd.h}</div></div>`;d.onclick=()=>flip(d,cd);grid.appendChild(d)});
  }
  async function flip(d,cd){if(lock||A.ended||d.classList.contains("open"))return;d.classList.add("open");SFX.flip();sayList([[cd.say,cd.en?"en":"zh"]]);open.push([d,cd]);if(open.length<2)return;lock=true;const [[d1,c1],[d2,c2]]=open;open=[];await sleep(700);
   if(c1.id===c2.id&&c1!==c2){SFX.ok();const [x,y]=centerOf(d2);A.add(10,x,y);d1.classList.add("done");d2.classList.add("done");A.good(d2);left--;if(left<=0){A.add(10);await sleep(700);board()}}
@@ -3280,9 +3280,9 @@ function mkGoal(A,G){const C=GL[G.id];if(!C||C.t==="self")return null;const S=A.
   A.stars=(A.stars||0)+1;await sleep(1500);box.classList.remove("win");draw();if(C.t==="path")placeHero(-1,true)}
  function bad(el){replace();if(C.t==="path"&&heroEl){heroEl.classList.add("ouch");fxAt(heroEl,C.fx);setTimeout(()=>heroEl.classList.remove("ouch"),600)}else fxAt(el,C.fx||"ef_dust")}
  const OBS=".opt,.tile,.card,.egg,.sayCard,.qbar,.candybtn,.micbtn,.claw,.stack,.orow,.dino,.ghero,.hud,.cnt,.big,.lf,.ovl,.spark";
- function place(){if(!box.isConnected)return;const sr=S.getBoundingClientRect();if(!sr.width)return;
+ function place(){if(!box.isConnected)return;const sr=S.getBoundingClientRect();if(!sr.width)return;box.classList.toggle("port",sr.height>sr.width);if(S.classList.contains("has-mem")){box.classList.remove("tight");return}
   const P=sr.height>sr.width,isP=C.t==="path";const bw=box.offsetWidth,bh=box.offsetHeight;
-  const ob=[...S.querySelectorAll(OBS)].filter(e=>!box.contains(e)&&e.offsetParent!==null).map(e=>e.getBoundingClientRect()).filter(r=>r.width>4&&r.height>4&&r.width<sr.width*.95);
+  const ob=[...S.querySelectorAll(OBS)].filter(e=>!box.contains(e)&&e.getClientRects().length>0).map(e=>e.getBoundingClientRect()).filter(r=>r.width>4&&r.height>4&&r.width<sr.width*.95);
   const xs=isP?[sr.width*.03]:[sr.width-bw-sr.width*.02,sr.width*.02,(sr.width-bw)/2];
   const tops=[];for(let y=sr.height*.11;y<=sr.height-bh-sr.height*.02;y+=sr.height*.03)tops.push(y);
   let best=null;for(const x of xs)for(const y of tops){let s=0;const L=sr.left+x,T=sr.top+y;
@@ -3293,7 +3293,7 @@ function mkGoal(A,G){const C=GL[G.id];if(!C||C.t==="self")return null;const S=A.
   box.classList.toggle("tight",best.s>bw*bh*.08);if(isP)placeHero(n-1,true)}
  let pt=0;const replace=()=>{clearTimeout(pt);pt=setTimeout(place,450)};
  [60,700,1600,3000].forEach(ms=>setTimeout(place,ms));
- addEventListener("resize",()=>{replace();if(C.t==="path")placeHero(n-1,true)});
+ addEventListener("resize",()=>{replace();if(C.t==="path")placeHero(n-1,true)});addEventListener("orientationchange",()=>{setTimeout(place,350);setTimeout(place,900)});
  const mo=new MutationObserver(replace);mo.observe(S,{childList:true,subtree:false});
  return {good,bad,box,C}}
 
